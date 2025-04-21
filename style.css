@@ -103,18 +103,61 @@ body {
             gap: 20px;
             box-shadow: 0 10px 1px hsl(3, 55%, 63%);
 
-            input {
-                font-family: PoppinsSemiBold;
-                width: 420px;
-                height: 55px;
-                padding: 0 30px;
-                border-radius: 5px;
-                border: 1px solid hsl(0, 0%, 87%);
-                outline-color: hsl(249, 15%, 42%);
+            .box {
+                display: flex;
+                flex-direction: column;
+                /* align-items: center; */
+                justify-content: center;
+                position: relative;
+                
+                input {
+                    font-family: PoppinsSemiBold;
+                    width: 420px;
+                    height: 55px;
+                    padding: 0 30px;
+                    border-radius: 5px;
+                    border: 1px solid hsl(0, 0%, 87%);
+                    outline-color: hsl(249, 15%, 42%);
+                    
+                }
+                input.error {
+                    border: 2px solid hsl(3, 55%, 63%);
+                    color: hsl(3, 55%, 63%);
+                }
+                ::placeholder {
+                    font-family: PoppinsSemiBold;
+                    font-size: 14px;
+                }
+
+                .icon {
+                    display: none;
+                    img {
+                        display: flex;
+                        position: absolute;
+                        right: 25px;
+                        top: 37%;
+                        transform: translateY(-50%);
+                    }
+                }
+                .icon.active {
+                    display: block;
+                }
+
+                .error-message {
+                    display: none;
+                    font-size: 11px;
+                    color: var(--Red);
+                    margin-top: 5px;
+                    text-align: end;
+                    font-family: PoppinsMedium;
+                    font-style: italic;
+                }
+                .error-message.active {
+                    display: block;
+                }
             }
-            ::placeholder {
-                font-family: PoppinsSemiBold;
-                font-size: 14px;
+            .box.error input {
+                border: 1px solid var(--Red);
             }
 
             button {

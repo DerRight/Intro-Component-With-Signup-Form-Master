@@ -1,8 +1,39 @@
 function validInformation() {
-    const firstName = document.getElementById('first-name');
-    const lassName = document.getElementById('last-name');
-    const emailAddress = document.getElementById('email-address');
-    const paddword = document.getElementById('password');
+    const fields = [
+        {
+            input: document.getElementById('first-name'),
+            isValid: (val) => val.trim() !== '',
+        },
+        {
+            input: document.getElementById('last-name'),
+            isValid: (val) => val.trim() !== '',
+        },
+        {
+            input: document.getElementById('email-address'),
+            isValid: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+        },
+        {
+            input: document.getElementById('password'),
+            isValid: (val) => val.trim() !== '',
+        }
+    ];
 
-    if (!)
+    fields.forEach(({ input, isValid }) => {
+        const section = input.closest('section'); // 找到包裹的 section
+        const icon = section.querySelector('.icon');
+        const message = section.querySelector('.error-message');
+
+        // 清除錯誤狀態
+        input.classList.remove('error');
+        icon.classList.remove('active');
+        message.classList.remove('active');
+
+        if (!isValid(input.value)) {
+            input.classList.add('error');
+            icon.classList.add('active');
+            message.classList.add('active');
+        }
+    });
 }
+
+

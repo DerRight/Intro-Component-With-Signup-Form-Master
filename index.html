@@ -30,35 +30,67 @@
 
       <article class="area-input">
         <section class="price">
-          <p class="price-text"><span class="days">Try it free 7 days</span> then $20/mo. thereafter</p>
+          <p class="price-text">
+            <span class="days">Try it free 7 days</span> then $20/mo. thereafter
+          </p>
         </section>
 
         <section class="input">
-          <input
-            type="text"
-            placeholder="First Name"
-            class="first-name"
-            id="first-name"
-          />
-          <input
-            type="text"
-            placeholder="Last Name"
-            class="last-name"
-            id="last-name"
-          />
-          <input
-            type="text"
-            placeholder="Email Address"
-            class="email-address"
-            id="email-address"
-          />
-          <input
-            type="text"
-            placeholder="Password"
-            class="password"
-            id="password"
-          />
-          <button class="BTN" onclick="validInformation()">Claim your free trial</button>
+          <section class="firstname box">
+            <input
+              type="text"
+              placeholder="First Name"
+              class="first-name"
+              id="first-name"
+            />
+            <figure id="icon" class="icon">
+              <img src="./images/icon-error.svg" alt="icon" />
+            </figure>
+            <p class="error-message" id="error-message">First Nmae cannot be empty</p>
+          </section>
+
+          <section class="lastname box">
+            <input
+              type="text"
+              placeholder="Last Name"
+              class="last-name"
+              id="last-name"
+            />
+            <figure id="icon" class="icon">
+              <img src="./images/icon-error.svg" alt="icon" />
+            </figure>
+            <p class="error-message" id="error-message">Last Nmae cannot be empty</p>
+          </section>
+
+          <section class="emailaddress box">
+            <input
+              type="text"
+              placeholder="Email Address"
+              class="email-address"
+              id="email-address"
+            />
+            <figure id="icon" class="icon">
+              <img src="./images/icon-error.svg" alt="icon" />
+            </figure>
+            <p class="error-message" id="error-message">Looks like this is not an email</p>
+          </section>
+
+          <section class="password box">
+            <input
+              type="text"
+              placeholder="Password"
+              class="password"
+              id="password"
+            />
+            <figure id="icon" class="icon">
+              <img src="./images/icon-error.svg" alt="icon" />
+            </figure>
+            <p class="error-message" id="error-message">Password cannot be empty</p>
+          </section>
+
+          <button class="BTN" onclick="validInformation()">
+            Claim your free trial
+          </button>
           <p class="direction">
             By clicking the button, you are agreeing to our
             <span class="highlight">Terms and Services</span>
